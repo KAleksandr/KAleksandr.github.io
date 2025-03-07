@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сюрприз для 8 березня!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 120, 150, 0.5);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .btn:active {
+            transform: scale(0.9);
+        }
+        .animation {
+            font-size: 3em;
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+        }
+        .show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .certificate {
+            width: 90%;
+            max-width: 400px;
+            margin-top: 20px;
+            display: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <button id="surpriseBtn" class="btn">Натисни мене!</button>
+    <div id="animationText" class="animation hidden">💝 Я тебе кохаю, сонечко моє.💝
+	<p>✨💫Ти — неймовірна.💫✨/</p>
+	<p>🎉 Насолоджуйся кожним моментом! 🎉</p></div>
+    <img id="certificate" class="certificate" src="certificate.jpg" alt="Сертифікат">
+
+    <script>
+        document.getElementById("surpriseBtn").addEventListener("click", function() {
+            let button = this;
+            button.style.transform = "scale(1.2)";
+            button.style.opacity = "0";
+            setTimeout(() => {
+                button.style.display = "none";
+                let animationText = document.getElementById("animationText");
+                animationText.classList.remove("hidden");
+                setTimeout(() => {
+                    animationText.classList.add("show");
+                    setTimeout(() => {
+                        animationText.style.opacity = "0";
+                        setTimeout(() => {
+                            animationText.style.display = "none";
+                            document.getElementById("certificate").style.display = "block";
+                        }, 2000);
+                    }, 2000);
+                }, 500);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
