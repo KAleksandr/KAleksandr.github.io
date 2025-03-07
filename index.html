@@ -47,7 +47,7 @@
             transform: scale(1);
         }
         .certificate {
-            width: 90%;
+            width: 100%;
             max-width: 400px;
             margin-top: 20px;
             display: none;
@@ -58,9 +58,9 @@
 </head>
 <body>
     <button id="surpriseBtn" class="btn">Натисни мене!</button>
-    <div id="animationText" class="animation hidden">💝 Я тебе кохаю, сонечко моє.💝
-	<p>✨💫Ти — неймовірна.💫✨/</p>
-	<p>🎉 Насолоджуйся кожним моментом! 🎉</p></div>
+    <div id="animationText" class="animation hidden">💝Я тебе кохаю, сонечко моє.💝
+	<p>✨💫Ти — неймовірна.💫✨</p>
+	<p>🎉Насолоджуйся кожним моментом!🎉</p></div>
     <img id="certificate" class="certificate" src="certificate.jpg" alt="Сертифікат">
 
     <script>
@@ -80,7 +80,7 @@
                             animationText.style.display = "none";
                             document.getElementById("certificate").style.display = "block";
                         }, 2000);
-                    }, 2500);
+                    }, 4500);
                 }, 500);
             }, 500);
         });
